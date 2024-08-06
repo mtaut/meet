@@ -5,7 +5,7 @@ The Meet App is a serverless, progressive web application built with React using
 ## Usage and Features
 
 `**Feature 1: Filter Events by City**`
-As a user,
+As a user, <br />
 I should be able to filter events by city,
 So that I can see a list of events taking place in that city.
 
