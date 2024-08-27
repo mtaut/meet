@@ -1,4 +1,4 @@
-"use strict";
+"use strict"; //may not need this, causing error
 
 const { google } = require("googleapis");
 const calendar = google.calendar("v3");

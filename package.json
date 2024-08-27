@@ -2,6 +2,7 @@
   "name": "meet",
   "version": "0.1.0",
   "private": true,
+  "notes": "cf 2024 project, 1st using TDD",
   "homepage": "https://mtaut.github.io/meet",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
