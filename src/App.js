@@ -12,23 +12,23 @@ const App = () => {
   const [currentCity, setCurrentCity] = useState("See all cities");
 
   useEffect(() => {
-    fetchData();
-  }, [currentCity]);
+    const fetchData = async () => {
+      const allEvents = await getEvents();
+      const filteredEvents =
+        currentCity === "See all cities"
+          ? allEvents
+          : allEvents.filter((event) => event.location === currentCity);
+      setEvents(filteredEvents.slice(0, currentNOE));
+      setAllLocations(extractLocations(allEvents));
+    };
 
-  const fetchData = async () => {
-    const allEvents = await getEvents();
-    const filteredEvents =
-      currentCity === "See all cities"
-        ? allEvents
-        : allEvents.filter((event) => event.location === currentCity);
-    setEvents(filteredEvents.slice(0, currentNOE));
-    setAllLocations(extractLocations(allEvents));
-  };
+    fetchData();
+  }, [currentCity, currentNOE]);
 
   return (
     <div className="App">
       <CitySearch allLocations={allLocations} setCurrentCity={setCurrentCity} />
-      <NumberOfEvents />
+      <NumberOfEvents setCurrentNOE={setCurrentNOE} />
       <EventList events={events} />
     </div>
   );

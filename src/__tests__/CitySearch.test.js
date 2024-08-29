@@ -52,6 +52,7 @@ describe("<CitySearch /> component", () => {
       expect(suggestionListItems[i].textContent).toBe(suggestions[i]);
     }
   });
+
   test("renders the suggestion text in the textbox upon clicking on the suggestion", async () => {
     const user = userEvent.setup();
     const allEvents = await getEvents();
