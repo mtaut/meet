@@ -45,8 +45,8 @@ defineFeature(feature, (test) => {
     then(
       "the event list should update to show the specified number of events",
       async () => {
-        // const EventListItems = await screen.findAllByRole("listitem");
-        // expect(EventListItems).toHaveLength(10);
+        const EventListItems = await screen.findAllByRole("listitem");
+        expect(EventListItems).toHaveLength(10);
       }
     );
   });
